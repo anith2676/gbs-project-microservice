@@ -31,4 +31,4 @@ public class Menu {
     private String userName; 
     @Column(nullable = false, name = "password")
     private String password; 
-  
+}
