@@ -1,9 +1,18 @@
 package com.gbs.caterermenuservice.Model;
 
+import java.time.LocalDate;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.CollectionId;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,15 +29,21 @@ import lombok.Setter;
 @AllArgsConstructor
 
 public class Menu {
+
     @Id
     @GeneratedValue
     private Integer id;
 
-    @Column(nullable = false, name = "name")
-    private String name; 
+    @Column(name = "Menu_name")
+    private String MenuName;
 
-    @Column(nullable = false, name = "user_name")
-    private String userName; 
-    @Column(nullable = false, name = "password")
-    private String password; 
+    @Column(name = "cater_name")
+    private String CaterName;
+
+
+    @OneToMany(mappedBy = "menu", 
+    cascade =  CascadeType.ALL, 
+    fetch = FetchType.EAGER)
+    private List<Item> items;
+    
 }
