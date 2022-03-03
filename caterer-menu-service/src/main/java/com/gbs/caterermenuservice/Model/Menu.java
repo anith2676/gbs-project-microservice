@@ -31,5 +31,4 @@ public class Menu {
     private String userName; 
     @Column(nullable = false, name = "password")
     private String password; 
-    @Column(nullable = false, name = "email_id")
-    private String email; 
+  
