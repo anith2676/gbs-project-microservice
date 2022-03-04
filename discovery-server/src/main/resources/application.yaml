@@ -1,0 +1,12 @@
+# spring.application.name=main-discovery-server
+# spring.application.index=0
+
+spring:
+  application:
+    name: main-discovery-server
+server:
+  port: 8761
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
