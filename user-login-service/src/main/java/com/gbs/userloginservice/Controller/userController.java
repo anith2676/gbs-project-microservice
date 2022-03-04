@@ -8,12 +8,10 @@ import java.util.Map;
 import com.gbs.userloginservice.Model.Registration;
 import com.gbs.userloginservice.Repo.UserRepo;
 
-import org.hibernate.query.criteria.internal.expression.function.AggregationFunction.LEAST;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -43,7 +41,6 @@ public class userController {
                 }
             }            
         } catch (Exception e) {
-            //TODO: handle exception
      }
         return response;
     }
@@ -83,7 +80,6 @@ public class userController {
                 response.put("message", "User created successfully");    
             }
     } catch (Exception e) {
-        //TODO: handle exception
     }
     return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }    
