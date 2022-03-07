@@ -1,0 +1,28 @@
+server:
+    port: 9000
+    servlet:
+        context-path: /api
+
+spring:
+    datasource:
+        username: sa
+        password: password
+        url: jdbc:h2:mem:item_micro
+        driverClassName: org.h2.Driver
+    application:
+        name: item-discovery-client
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        hibernate:
+            ddl-auto: update
+    h2:
+        console:
+            enabled: true
+            path: /database
+
+
+logging: 
+    level:
+        root: INFO
+        '[org.hibernate.SQL]': DEBUG
+        '[org.hibernate.type]': TRACE

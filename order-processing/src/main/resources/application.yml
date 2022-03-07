@@ -1,0 +1,29 @@
+server:
+    port: 8085
+    servlet:
+        context-path: /api
+
+spring:
+    application:
+        name: order-processing
+    datasource:
+        username: sa
+        password: password
+        url: jdbc:h2:mem:item_micro
+        driverClassName: org.h2.Driver
+
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        hibernate:
+            ddl-auto: update
+    h2:
+        console:
+            enabled: true
+            path: /database
+
+
+logging:
+  level:
+    root: INFO
+    '[org.hibernate.SQL]': DEBUG
+    '[org.hibernate.type]': TRACE
