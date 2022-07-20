@@ -1,0 +1,30 @@
+server:
+    port: 8081
+
+spring:
+    application:
+        name: discovery-login
+    datasource:
+        username: sa
+        password: password
+        url: jdbc:h2:mem:testdb
+        driverClassName: org.h2.Driver
+    
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        hibernate:
+            ddl-auto: update
+    h2:
+        console:
+            enabled: true
+            path: /database
+logging: 
+    level:
+        root: INFO
+        '[org.hibernate.SQL]': DEBUG
+        '[org.hibernate.type]': TRACE
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
